@@ -1,0 +1,49 @@
+@using Microsoft.AspNetCore.Components.Web
+<div class="card">
+    <div class="card-header">
+    <span>Data Component</span>
+    <span class="btn btn-dark" @onclick="getData" >Click To Get Data</span>
+</div>
+
+
+<div class="card-body">
+   <br/>
+    <div class="@style">@data</div>
+</div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-header">
+    <span>Counter Component</span>
+    <span class="btn btn-dark" @onclick="Increment" >Click</span>
+
+</div>
+
+
+<div class="card-body">
+   <br/>
+    <div class="@style">@Count</div>
+</div>
+</div>
+
+
+@code{
+[Parameter]
+public string data{get;set;}=string.Empty;
+[Parameter]
+public string style{get;set;}
+private void getData()
+{
+    data="I am Working";
+    style="bg-success text-white";
+}
+
+public int Count{get;set;}=0;
+public void Increment()
+{
+    Count++;
+}
+
+}
